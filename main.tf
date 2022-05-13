@@ -3,5 +3,5 @@ output "name" {
 }
 
 output "data" {
-  value = "my data"
+  value = "my new data"
 }
