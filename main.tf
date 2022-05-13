@@ -5,7 +5,3 @@ output "name" {
 output "data" {
   value = "my data"
 }
-
-output "new" {
-  value = "new-branch"
-}
