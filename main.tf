@@ -10,11 +10,11 @@ output "data-2" {
   value = "my new data"
 }
 
-
-resource "aws_security_group" "demo" {
-  name = "my-demo-sg"
-
-  tags = {
-    Name = "my-demo-sg"
-  }
-}
+#
+#resource "aws_security_group" "demo" {
+#  name = "my-demo-sg"
+#
+#  tags = {
+#    Name = "my-demo-sg"
+#  }
+#}
