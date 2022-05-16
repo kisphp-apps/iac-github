@@ -15,10 +15,10 @@ output "data-3" {
 }
 
 
-resource "aws_security_group" "demo" {
-  name = "my-demo-sg"
-
-  tags = {
-    Name = "my-demo-sg"
-  }
-}
+#resource "aws_security_group" "demo" {
+#  name = "my-demo-sg"
+#
+#  tags = {
+#    Name = "my-demo-sg"
+#  }
+#}
