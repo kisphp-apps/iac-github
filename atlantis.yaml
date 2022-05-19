@@ -1,0 +1,6 @@
+version: 3
+projects:
+  - name: app-1
+    dir: app-1
+  - name: app-2
+    dir: app-2
