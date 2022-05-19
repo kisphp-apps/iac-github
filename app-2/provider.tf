@@ -1,9 +1,9 @@
 terraform {
-#  backend "s3" {
-#    bucket         = "709036017266-terraform-state"
-#    key            = "iac/github.tfstate"
-#    region         = "us-east-1"
-#  }
+  backend "s3" {
+    bucket         = "320447677862-terraform-state"
+    key            = "iac/app-2/github.tfstate"
+    region         = "us-east-1"
+  }
 
   required_providers {
     aws = {
