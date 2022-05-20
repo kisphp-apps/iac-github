@@ -14,9 +14,9 @@ output "data-2-1" {
   value = "my data 2-1"
 }
 
-output "data-3" {
-  value = "my data 3"
-}
+#output "data-3" {
+#  value = "my data 3"
+#}
 
 #resource "aws_security_group" "demo" {
 #  name = "my-demo-sg"
