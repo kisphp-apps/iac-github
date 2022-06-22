@@ -22,15 +22,14 @@ jobs:
           soft_fail: true
 
       - name: register output
-        id: register-output
         run: |
-          echo "::set-output name=tfsec_out=$(cat tfsec-output.txt)"
+          echo "::set-output nametfsec_out=$(cat tfsec-output.txt)"
 
       - uses: mshick/add-pr-comment@v1
         with:
           message: |
             TFSEC output:
-            ${{ env.TFSEC_OUT }}
-          repo-token: ${{ steps.regiter-output.outputs.tfsec_out }}
+            ${{ steps.regiter-output.outputs.tfsec_out }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
