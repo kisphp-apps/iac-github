@@ -27,7 +27,7 @@ jobs:
 
       - uses: mshick/add-pr-comment@v1
         with:
-          message: "${{ TFSEC_OUT }}"
+          message: "${{ env.TFSEC_OUT }}"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
