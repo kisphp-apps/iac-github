@@ -21,13 +21,13 @@ jobs:
           additional_args: " --out tfsec-output.txt"
           soft_fail: true
 
-#      - name: check-out
-#        run: cat tfsec-output.txt
+      - name: register output
+        run: |
+          TFSEC_OUT=$(cat tfsec-output.txt)
 
       - uses: mshick/add-pr-comment@v1
         with:
-          message: |
-            ${{ cat tfsec-output.txt }}
+          message: "${{ TFSEC_OUT }}"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
