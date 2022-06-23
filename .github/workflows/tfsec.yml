@@ -25,6 +25,9 @@ jobs:
         id: register_output
         run: |
           TFSEC_OUT=$(cat tfsec-output.txt)
+          TFSEC_OUT="${TFSEC_OUT//'%'/'%25'}"
+          TFSEC_OUT="${TFSEC_OUT//$'\n'/'%0A'}"
+          TFSEC_OUT="${TFSEC_OUT//$'\r'/'%0D'}"
           echo "::set-output name=tfsec_out::$TFSEC_OUT"
 
       - name: show-report
