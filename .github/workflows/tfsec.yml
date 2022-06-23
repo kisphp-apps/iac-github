@@ -23,7 +23,7 @@ jobs:
 
       - name: register output
         run: |
-          echo "::set-output nametfsec_out=$(cat tfsec-output.txt)"
+          echo "::set-output name=tfsec_out=$(cat tfsec-output.txt)"
 
       - uses: mshick/add-pr-comment@v1
         with:
