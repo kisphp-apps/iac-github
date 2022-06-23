@@ -30,16 +30,16 @@ jobs:
           TFSEC_OUT="${TFSEC_OUT//$'\r'/'%0D'}"
           echo "::set-output name=tfsec_out::$TFSEC_OUT"
 
-      - name: show-report
-        run: cat tfsec-output.txt
+#      - name: show-report
+#        run: cat tfsec-output.txt
 
       - uses: mshick/add-pr-comment@v1
         with:
-          message: "${{ steps.register_output.outputs.tfsec_out }}"
+          message: "<pre>${{ steps.register_output.outputs.tfsec_out }}</pre>"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
 
-      - name: debug
-        run: printenv | sort
+#      - name: debug
+#        run: printenv | sort
 
