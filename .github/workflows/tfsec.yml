@@ -33,8 +33,8 @@ jobs:
       - uses: mshick/add-pr-comment@v1
         with:
           message: |
-            TFSEC output 2:
-            ${{ steps.register_output.outputs.tfsec_out }}
+            TFSEC output 3:
+            echo "${{ steps.register_output.outputs.tfsec_out }}"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
