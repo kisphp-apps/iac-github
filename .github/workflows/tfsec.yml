@@ -18,7 +18,7 @@ jobs:
         id: tfsec_step
         uses: aquasecurity/tfsec-action@v1.0.0
         with:
-          additional_args: " --out tfsec-output.txt"
+          additional_args: "--no-color --out tfsec-output.txt"
           soft_fail: true
 
       - name: register output
