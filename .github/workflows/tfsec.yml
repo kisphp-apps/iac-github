@@ -27,6 +27,9 @@ jobs:
           TFSEC_OUT=$(cat tfsec-output.txt)
           echo "::set-output name=tfsec_out::$TFSEC_OUT"
 
+      - name: show-report
+        run: cat tfsec-output.txt
+
       - uses: mshick/add-pr-comment@v1
         with:
           message: |
