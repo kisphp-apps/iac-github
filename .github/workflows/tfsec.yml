@@ -41,5 +41,8 @@ jobs:
           allow-repeats: false
 
       - name: debug
+        env:
+          COMMENT_URL: ${{ github.event.issue.comments_url }}
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: printenv | sort
 
