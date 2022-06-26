@@ -40,6 +40,6 @@ jobs:
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
 
-#      - name: debug
-#        run: printenv | sort
+      - name: debug
+        run: printenv | sort
 
