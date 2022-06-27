@@ -35,8 +35,8 @@ jobs:
         env:
           GITHUB_PR_COMMENT_FILENAME: "tfsec-output.txt"
           GITHUB_PR_NUMBER: ${{ github.event.number }}
-        with:
-          message: "<pre>${{ steps.register_output.outputs.tfsec_out }}</pre>"
+#        with:
+#          message: "<pre>${{ steps.register_output.outputs.tfsec_out }}</pre>"
 #          repo-token: ${{ secrets.GITHUB_TOKEN }}
 #          repo-token-user-login: 'github-actions[bot]'
 #          allow-repeats: false
