@@ -37,9 +37,9 @@ jobs:
           GITHUB_PR_NUMBER: ${{ github.event.number }}
         with:
           message: "<pre>${{ steps.register_output.outputs.tfsec_out }}</pre>"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
-          allow-repeats: false
+#          repo-token: ${{ secrets.GITHUB_TOKEN }}
+#          repo-token-user-login: 'github-actions[bot]'
+#          allow-repeats: false
 #
 #      - name: debug
 #        env:
