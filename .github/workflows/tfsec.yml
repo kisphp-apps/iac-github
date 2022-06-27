@@ -32,15 +32,18 @@ jobs:
 
 #      - uses: mshick/add-pr-comment@v1
       - uses: kisphp-apps/github-pr-comments@pr-comments
+        env:
+          GITHUB_PR_COMMENT_FILENAME: "tfsec-output.txt"
+          GITHUB_PR_NUMBER: ${{ github.event.number }}
         with:
           message: "<pre>${{ steps.register_output.outputs.tfsec_out }}</pre>"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           allow-repeats: false
-
-      - name: debug
-        env:
-          COMMENT_URL: ${{ github.event.pull_request.comments_url }}
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: printenv | sort
+#
+#      - name: debug
+#        env:
+#          COMMENT_URL: ${{ github.event.pull_request.comments_url }}
+##          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        run: printenv | sort
 
