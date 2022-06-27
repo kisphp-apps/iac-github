@@ -31,7 +31,7 @@ jobs:
           echo "::set-output name=tfsec_out::$TFSEC_OUT"
 
 #      - uses: mshick/add-pr-comment@v1
-      - uses: kisphp-apps/github-pr-comments
+      - uses: kisphp-apps/github-pr-comments@pr-comments
         with:
           message: "<pre>${{ steps.register_output.outputs.tfsec_out }}</pre>"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
