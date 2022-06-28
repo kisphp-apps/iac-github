@@ -21,14 +21,14 @@ jobs:
           additional_args: "--no-color --out tfsec-output.txt"
           soft_fail: true
 
-      - name: register output
-        id: register_output
-        run: |
-          TFSEC_OUT=$(cat tfsec-output.txt)
-          TFSEC_OUT="${TFSEC_OUT//'%'/'%25'}"
-          TFSEC_OUT="${TFSEC_OUT//$'\n'/'%0A'}"
-          TFSEC_OUT="${TFSEC_OUT//$'\r'/'%0D'}"
-          echo "::set-output name=tfsec_out::$TFSEC_OUT"
+#      - name: register output
+#        id: register_output
+#        run: |
+#          TFSEC_OUT=$(cat tfsec-output.txt)
+#          TFSEC_OUT="${TFSEC_OUT//'%'/'%25'}"
+#          TFSEC_OUT="${TFSEC_OUT//$'\n'/'%0A'}"
+#          TFSEC_OUT="${TFSEC_OUT//$'\r'/'%0D'}"
+#          echo "::set-output name=tfsec_out::$TFSEC_OUT"
 
       - uses: liveintent/github-pr-comments@main
         env:
