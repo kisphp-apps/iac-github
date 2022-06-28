@@ -30,7 +30,7 @@ jobs:
           TFSEC_OUT="${TFSEC_OUT//$'\r'/'%0D'}"
           echo "::set-output name=tfsec_out::$TFSEC_OUT"
 
-      - uses: liveintent/github-pr-comments@pr-comments
+      - uses: liveintent/github-pr-comments@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_PR_COMMENT_PRE: true
