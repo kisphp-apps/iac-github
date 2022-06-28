@@ -30,19 +30,13 @@ jobs:
           TFSEC_OUT="${TFSEC_OUT//$'\r'/'%0D'}"
           echo "::set-output name=tfsec_out::$TFSEC_OUT"
 
-#      - uses: mshick/add-pr-comment@v1
-      - uses: kisphp-apps/github-pr-comments@pr-comments
+      - uses: liveintent/github-pr-comments@pr-comments
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          GITHUB_PR_COMMENT_FILENAME: "tfsec-output.txt"
-#          GITHUB_PR_NUMBER: ${{ github.event.number }}
+          GITHUB_PR_COMMENT_PRE: true
         with:
           pr_number: ${{ github.event.number }}
           filename: "tfsec-output.txt"
-#          message: "<pre>${{ steps.register_output.outputs.tfsec_out }}</pre>"
-#          repo-token: ${{ secrets.GITHUB_TOKEN }}
-#          repo-token-user-login: 'github-actions[bot]'
-#          allow-repeats: false
 
 #      - name: debug
 #        env:
