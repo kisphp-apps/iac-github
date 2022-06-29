@@ -7,9 +7,6 @@ jobs:
     name: TFSEC
     runs-on: ubuntu-22.04
 
-    outputs:
-      tfsec_output: ${{ steps.tfsec_step.outputs.report }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,8 +18,7 @@ jobs:
           additional_args: "--no-color --out tfsec-output.txt"
           soft_fail: true
 
-#      - uses: mshick/add-pr-comment@v1
-      - uses: kisphp-apps/github-pr-comments@0.1.0-rc1
+      - uses: kisphp-apps/github-pr-comments@v0.1.0-rc1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_PR_SKIP_DELETE: true
