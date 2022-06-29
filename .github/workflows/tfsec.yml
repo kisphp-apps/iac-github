@@ -1,0 +1,36 @@
+name: Terraform
+
+on: pull_request
+
+jobs:
+  tfsec:
+    name: TFSEC
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: tfsec
+        id: tfsec_step
+        uses: aquasecurity/tfsec-action@v1.0.0
+        with:
+          additional_args: "--no-color --out tfsec-output.txt"
+          soft_fail: true
+
+      - uses: kisphp-apps/github-pr-comments@pr-comments
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_PR_SKIP_DELETE: true
+          GITHUB_PR_COMMENT_PRE: true
+        with:
+          pr_number: ${{ github.event.number }}
+          filename: "tfsec-output.txt"
+          title: "tfsec report"
+
+
+#      - name: debug
+#        env:
+#          COMMENT_URL: ${{ github.event.pull_request.comments_url }}
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        run: printenv | sort
