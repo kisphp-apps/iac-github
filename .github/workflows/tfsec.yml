@@ -18,7 +18,7 @@ jobs:
           additional_args: "--no-color --out tfsec-output.txt"
           soft_fail: true
 
-      - uses: kisphp-apps/github-pr-comments@v0.1.0-rc1
+      - uses: kisphp-apps/github-pr-comments@pr-comments
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_PR_SKIP_DELETE: true
